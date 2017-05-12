@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<li>
+  <a title="Facebook" class="socialaccount_provider facebook"
+     href="/accounts/facebook/login/?process=login">Facebook</a>
+</li>
+
+<li>
+  <a title="Twitter" class="socialaccount_provider twitter"
+     href="/accounts/twitter/login/?process=login">Twitter</a>
+</li>
+
+
+<li>
+  <a title="GitHub" class="socialaccount_provider github"
+     href="/accounts/github/login/?process=login">GitHub</a>
+</li>
+<form method="post" action="/checklogin/">
+    <input type="text" name="name">
+    <input type="password" name="pa">
+    <input type="submit">
+</form>
+</body>
+</html>
