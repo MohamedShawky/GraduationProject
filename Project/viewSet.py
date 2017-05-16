@@ -7,7 +7,7 @@ from rest_framework.reverse import reverse
 from django.http import HttpResponse
 from .models import *
 from .serializers import *
-
+from rest_framework.mixins import RetrieveModelMixin, UpdateModelMixin, CreateModelMixin
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_jwt.settings import api_settings
@@ -87,8 +87,25 @@ class CreateUserView(CreateAPIView):
             status=status.HTTP_201_CREATED, headers=headers
         )
 
+class ProblemUserView(viewsets.ModelViewSet):
+    serializer_class = ProblemUser
+    queryset         = Problems.objects.all()
+
+class ProblemCommentView(viewsets.ModelViewSet):
+    serializer_class = ProblemCommentSerializer
+    queryset         = CommentProblem.objects.all()
 
 class NestedView(viewsets.ModelViewSet):
+    lookup_field = 'id'
     serializer_class = NestedSerializer
-    queryset = CommentProblem.objects.all()
+    queryset = Problems.objects.all()
+
+###########################################################################################################
+###########################################################################################################
+
+
+
+class TestView(viewsets.ModelViewSet):
+    serializer_class = NestedWorkedSerializer
+    queryset         = Problems.objects.all()
 

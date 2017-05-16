@@ -24,14 +24,18 @@ class UserDetailSerializer(serializers.HyperlinkedModelSerializer):
     def __unicode__(self):
         return User.username
 
+
+
+
 class ReplaySerializer(serializers.ModelSerializer):
     class Meta:
         model = Reply
         # fields = '__all__'
-        fields = ('user', 'content', 'date', 'comment')
+        fields = ('user', 'content', 'date')
 
 class CommentProblemSerializer(serializers.ModelSerializer):
     # content = ReplaySerializer(read_only=False)
+    # user = UserDetail(read_only = True)
     class Meta:
         model = CommentProblem
         fields = '__all__'
@@ -74,30 +78,31 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Projects
         fields = '__all__'
 
-class Profileselializer(serializers.ModelSerializer):
-    # image = SerializerMethodField(read_only=False)
+
+
+class UserDetail(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Profile
+        model = User
         fields = (
             'id',
-            'user',
-            'skills',
-            'image',
-            'audio',
-            'video',
-
+            'username',
+            'email',
         )
+        depth = 2
+class Profileselializer(serializers.ModelSerializer):
+    # image = SerializerMethodField(read_only=False)
+    user = UserDetail(read_only = True)
+    class Meta:
+        model = Profile
+        fields = ('id',
+                  'image',
+                  'user')
     def get_image(self, obj):
         try:
             image =  obj.image.path
         except:
             image = None
         return image
-
-
-
-# tryyyyyyyyyyyyyyyyy
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -116,17 +121,63 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+class ProblemUser(serializers.HyperlinkedModelSerializer):
+    publish_user = UserDetail(read_only = True)
+    class Meta:
+        model = Problems
+        fields = (
+                  'id',
+                  'content',
+                  'problem_rate',
+                  'category',
+                  'date',
+                  'publish_user')
+        depth = 2
+class ProblemCommentSerializer(serializers.ModelSerializer):
+    user = UserDetail(read_only = True)
+    class Meta:
+        model = CommentProblem
+        fields = (
+                  'id',
+                  'content',
+                  'date',
+                  'user',
+                  'problem',
+        )
 class NestedSerializer(serializers.ModelSerializer):
-    user = UserDetailSerializer(read_only = True)
-    problem = ProblemSerializer(read_only = True)
+    Comment = serializers.CreateOnlyDefault(default = True)
+    # publish_user = UserDetail(read_only = True)
+    publish_user = Profileselializer(read_only = True)
+
+
 
     class Meta:
         model = Problems
         fields = (
+            'id',
             'content',
-            'date',
-            'user',
-            'problem',
-
+            'Comment',
+            'publish_user',
         )
 
+class NestedProblem(serializers.ModelSerializer):
+    user = UserDetail(read_only = True)
+    class Meta:
+        model = CommentProblem
+        fields = '__all__'
+
+class NestedWorkedSerializer(serializers.ModelSerializer):
+    Comment = NestedProblem(many = True, required = False)
+    publish_user = UserDetail(read_only = True)
+    # publish_user = Profileselializer(read_only = True, required = False)
+
+
+    class Meta:
+        model = Problems
+        fields = (
+                  'publish_user',
+                  'id',
+                  'content',
+                  'date',
+                  'Comment',
+                  )

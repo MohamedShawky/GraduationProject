@@ -5,13 +5,23 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
 
-
 class Problems(models.Model):
     content = models.CharField(max_length=500)
     publish_user = models.ForeignKey(User, default=1)
     problem_rate = models.IntegerField(blank = True, null = True)
     category = models.CharField(max_length=20, null=True, blank=True)
     date = models.DateTimeField(auto_now=True, auto_now_add=False)
+
+class CommentProblem(models.Model):
+    user = models.ForeignKey(User)
+    content = models.CharField(max_length=120, blank=True)
+    date = models.DateTimeField(auto_now=True, auto_now_add=False)
+    problem = models.ForeignKey(Problems, related_name='Comment', on_delete=models.CASCADE, blank = True, null = True)
+
+    def __str__(self):
+        return self.content
+
+
 
 class Projects(models.Model):
     name = models.CharField(max_length=60)
@@ -29,12 +39,6 @@ class Projects(models.Model):
     video = models.FileField(upload_to='video', max_length=200, null=True, blank=True)
     file = models.FileField(upload_to='files', max_length=200, null=True, blank=True)
 
-
-class CommentProblem(models.Model):
-    user = models.ForeignKey(User)
-    content = models.CharField(max_length=120, blank=True)
-    date = models.DateTimeField(auto_now=True, auto_now_add=False)
-    problem = models.ForeignKey(Problems, blank=True, null=True)
 
 
 class CommentProject(models.Model):
@@ -64,16 +68,6 @@ class Notification(models.Model):
 class ProfileManager(models.Manager):
     def active(self, *args, **kwargs):
         return super(ProfileManager, self).filter(draft=False).filter(puplish = timezone.now())
-
-# def upload_location(instance, filename):
-#     ProfileModel = instance.__class__
-#
-#     try:
-#             new_id = ProfileModel.objects.order_by("id").last().id + 1
-#     except:
-#         new_id = 0
-#
-#     return "%s/%s" %(new_id, filename)
 
 class Profile(models.Model):
     user = models.ForeignKey(User)

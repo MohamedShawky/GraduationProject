@@ -13,10 +13,11 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url, include, static
 from django.contrib import admin
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
+from django.conf import settings
 
 
 from Project.view import *
@@ -30,6 +31,12 @@ router.register(r'project',ProjectViewset,r'project')
 router.register(r'commentproblem',CommentProblemViewset,r'commentproblem')
 router.register(r'commentproject',CommentProjectViewset,r'commentproject')
 router.register(r'reply',ReplyViewset,r'reply')
+router.register(r'problemUser',ProblemUserView, r'problemUser')
+router.register(r'problemUComment',ProblemCommentView, r'problemUComment')
+router.register(r'worked',TestView, r'worked')
+
+
+
 router.register(r'nested',NestedView, r'nested')
 
 
@@ -49,7 +56,11 @@ urlpatterns = [
     url(r'commentproblem', include(router.urls, namespace='commentproblem')),
     url(r'commentproject', include(router.urls, namespace='commentproject')),
     url(r'reply', include(router.urls, namespace='reply')),
+    url(r'problemUser', include(router.urls, namespace='problemUser')),
+    url(r'problemcommentU', include(router.urls, namespace='problemcommentU')),
+
     url(r'nested', include(router.urls, namespace='nested')),
+    url(r'', include(router.urls, namespace='worked')),
 
     url(r'^getSession/', get_Session),
     url(r'^setSession/', set_Session),
