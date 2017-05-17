@@ -34,6 +34,8 @@ router.register(r'reply',ReplyViewset,r'reply')
 router.register(r'problemUser',ProblemUserView, r'problemUser')
 router.register(r'problemUComment',ProblemCommentView, r'problemUComment')
 router.register(r'worked',TestView, r'worked')
+router.register(r'nestedProject',Test1View, r'nestedProject')
+
 
 
 
@@ -50,17 +52,18 @@ urlpatterns = [
     url('^api-activate/(?P<token>.+?)/$', ActivateUser.as_view(), name='activate-user'),
 
     url(r'',include(router.urls, namespace = 'user')),
-    url(r'profile', include(router.urls, namespace='profile')),
-    url(r'problem', include(router.urls, namespace='problem')),
-    url(r'project', include(router.urls, namespace='project')),
-    url(r'commentproblem', include(router.urls, namespace='commentproblem')),
-    url(r'commentproject', include(router.urls, namespace='commentproject')),
-    url(r'reply', include(router.urls, namespace='reply')),
-    url(r'problemUser', include(router.urls, namespace='problemUser')),
-    url(r'problemcommentU', include(router.urls, namespace='problemcommentU')),
+    url(r'', include(router.urls, namespace='profile')),
+    url(r'', include(router.urls, namespace='problem')),
+    url(r'', include(router.urls, namespace='project')),
+    url(r'', include(router.urls, namespace='commentproblem')),
+    url(r'', include(router.urls, namespace='commentproject')),
+    url(r'', include(router.urls, namespace='reply')),
+    url(r'', include(router.urls, namespace='problemUser')),
+    url(r'', include(router.urls, namespace='problemcommentU')),
 
-    url(r'nested', include(router.urls, namespace='nested')),
+    url(r'', include(router.urls, namespace='nested')),
     url(r'', include(router.urls, namespace='worked')),
+    url(r'', include(router.urls, namespace='nestedProject')),
 
     url(r'^getSession/', get_Session),
     url(r'^setSession/', set_Session),
