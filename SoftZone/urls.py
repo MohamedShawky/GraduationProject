@@ -36,9 +36,6 @@ router.register(r'problemUComment',ProblemCommentView, r'problemUComment')
 router.register(r'worked',TestView, r'worked')
 router.register(r'nestedProject',Test1View, r'nestedProject')
 
-
-
-
 router.register(r'nested',NestedView, r'nested')
 
 
