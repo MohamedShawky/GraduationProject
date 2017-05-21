@@ -1,0 +1,516 @@
+<nav class="navbar navbar-fixed-top navbar-default" style="background-color:#3b5998">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a style="margin-left: 10px;color: white;" class="navbar-brand collapse navbar-collapse" href="#">SoftZone</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <!--<div class="btn btn-sm navbar-btn glyphicon glyphicon-folder-open"></div>-->
+            <!--<div class="btn btn-sm navbar-btn glyphicon glyphicon-arrow-right"></div>-->
+            <!--<div class="btn btn-sm navbar-btn glyphicon glyphicon-refresh"></div>-->
+
+            <ul class="nav navbar-nav navbar-right">
+                <div style="color: white;" class="btn btn-md navbar-btn pull-left">Projects</div>
+                <div style="color: white;" class="btn btn-md navbar-btn pull-left">Problems</div>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+            </ul>
+            <form class="navbar-form navbar-right search-form" role="search">
+                <input type="text" class="form-control" placeholder="Search" />
+            </form>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="col-md-3 hidden-sm navbar-fixed-top hidden-xs" style="margin-top: 4.5%;">
+    <div class="list-group">
+        <a class="list-group-item" ng-click="displayAllProblems()" ng-class="{active:tab === 0}"><i class="fa fa-rss fa-fw" aria-hidden="true"></i>All Problems <span class="pull-right"></span></a>
+        <a class="list-group-item" ng-click="displaySoftWareProblems()" ng-class="{active:tab === 1}"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>SoftWare Problems</a>
+        <a class="list-group-item" ng-click="displayDailyProblems()" ng-class="{active:tab === 2}"><i class="fa fa-at fa-fw" aria-hidden="true"></i>Daily Problems</a>
+        <a class="list-group-item" ng-click="displayBusinessProblems()" ng-class="{active:tab === 3}"><i class="fa fa-at fa-fw" aria-hidden="true"></i>Business Problems</a>
+        <!--<a class="list-group-item" href="#"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>  SoftWare Problems</a>-->
+        <!--<a class="list-group-item" href="#"><i class="fa fa-hashtag fa-fw" aria-hidden="true"></i>  Followed Tags</a>-->
+        <!--<a class="list-group-item" href="#"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>  Public Activity</a>-->
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Invite your friends
+                        <span class="pull-right"><img src="images/1.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <small>Share this link via email, blog, or social networks!</small>
+                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="https://MyPod.tld/i/sdg321sd51sd5" value="https://MyPod.tld/i/sdg321sd51sd5">
+                    <a href="#"><small>Invite people by email</small></a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Welcome new users
+                        <span class="pull-right"><img src="images/2.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <small>Follow <a href="#">#newhere</a> and welcome new users to diaspora*!</small><br>
+                    <small><a href="#">Learn more</a></small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Need help?
+                        <span class="pull-right"><img src="images/3.jpg" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <small>The diaspora* community is here!</small><br>
+                    <small>Do You:</small><br>
+                    <small>... have a <a href="#">#question</a>?</small><br>
+                    <small>... find a <a href="#">#bug</a>?</small><br>
+                    <small>... have a <a href="#">#feature</a> suggestion?</small><br>
+                    <small><a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help</a>, <a href="#">Tutorials</a> & <a href="#">Wiki</a>: help for your first steps.</small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Connect services
+                        <span class="pull-right"><img src="images/4.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    <small>You can connect the following services to diaspora*:</small><br>
+                    <div align="center">
+                        <i class="fa fa-wordpress fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-tumblr-square fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Bookmarklet
+                        <span class="pull-right"><img src="images/1.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    <small>Post to diaspora* from anywhere by bookmarking this link => <a href="#">Post to diaspora*</a>.</small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Got a problem?
+                        <span class="pull-right"><img src="images/6.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix" style="text-decoration:none;">
+                <div class="panel-body">
+                    <small>Contact the administrator of your pod!<br>
+                        <a href="#">Podmin email</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-offset-3 col-md-8">
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <section class="post-heading">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object photo-profile img-circle" src="img/client2.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <!--<a href="#" class="anchor-username">-->
+                                        <!--<h4 class="media-heading">ahmed-halawa</h4>-->
+                                    <!--</a>-->
+
+                                    <a href="#" class="anchor-username">
+                                        <p class="media-heading">ahmed-halawa</p>
+                                    </a>
+                                    <a href="#" class="anchor-time">51 mins</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <!--<a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
+                            <a style="margin-left:15px;font-size: 16px; color: rgba(117,124,137,0.4); text-decoration: none; font-family: 'Roboto', sans-serif;text-decoration: none; cursor: pointer;">x</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-body">
+                    <div style="padding: 3% 3% 0 1%;">
+                    <p style="line-height: 1.6em;
+                    margin: 0 0 10px 0;font-weight:400;font-size: 16px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                        erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
+                        licitudin venenatis
+                    </div>
+                </section>
+                <div class="post-footer" style="margin-bottom: -20px;">
+                    <div class="post-footer-option">
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 media" ng-show="hiddenDiv[problem.id]" style="margin-top:-18px;padding: 1% 2% 3% 1%;background-color: white;">
+                    <hr>
+                    <div class="pull-left" style="margin-top: -4px;">
+                        <a href="#">
+                            <img class="media-object img-circle" src="img/client1.jpg" style="width: 40px;height: 40px;">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <form ng-enter="submitComment()">
+                            <input type="text" ng-model="textModel.val" class="form-control" placeholder="Write your comment">
+                        </form>
+                    </div>
+
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 40px;height: 40px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 40px;height: 40px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <section class="post-heading">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object photo-profile img-circle" src="img/client2.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <!--<a href="#" class="anchor-username">-->
+                                    <!--<h4 class="media-heading">ahmed-halawa</h4>-->
+                                    <!--</a>-->
+
+                                    <a href="#" class="anchor-username">
+                                        <p class="media-heading">ahmed-halawa</p>
+                                    </a>
+                                    <a href="#" class="anchor-time">51 mins</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <!--<a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
+                            <a style="margin-left:15px;font-size: 16px; color: rgba(117,124,137,0.4); text-decoration: none; font-family: 'Roboto', sans-serif;text-decoration: none; cursor: pointer;">x</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-body">
+                    <div style="padding: 3% 3% 0 1%;">
+                        <p style="line-height: 1.6em;
+                    margin: 0 0 10px 0;font-weight:400;font-size: 16px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                            turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                            erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
+                            licitudin venenatis
+                    </div>
+                </section>
+                <div class="post-footer" style="margin-bottom: -20px;">
+                    <div class="post-footer-option">
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 media" ng-show="hiddenDiv[problem.id]" style="margin-top:-18px;padding: 1% 2% 3% 1%;background-color: white;">
+                    <hr>
+                    <div class="pull-left" style="margin-top: -4px;">
+                        <a href="#">
+                            <img class="media-object img-circle" src="img/client1.jpg" style="width: 40px;height: 40px;">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <form ng-enter="submitComment()">
+                            <input type="text" ng-model="textModel.val" class="form-control" placeholder="Write your comment">
+                        </form>
+                    </div>
+
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 45px;height: 45px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 45px;height: 45px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <section class="post-heading">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object photo-profile img-circle" src="img/client2.jpg" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <!--<a href="#" class="anchor-username">-->
+                                    <!--<h4 class="media-heading">ahmed-halawa</h4>-->
+                                    <!--</a>-->
+
+                                    <a href="#" class="anchor-username">
+                                        <p class="media-heading">ahmed-halawa</p>
+                                    </a>
+                                    <a href="#" class="anchor-time">51 mins</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <!--<a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
+                            <a style="margin-left:15px;font-size: 16px; color: rgba(117,124,137,0.4); text-decoration: none; font-family: 'Roboto', sans-serif;text-decoration: none; cursor: pointer;">x</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-body">
+                    <div style="padding: 3% 3% 0 1%;">
+                        <p style="line-height: 1.6em;
+                    margin: 0 0 10px 0;font-weight:400;font-size: 16px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                            turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                            erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
+                            licitudin venenatis
+                    </div>
+                </section>
+                <div class="post-footer" style="margin-bottom: -20px;">
+                    <div class="post-footer-option">
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                            <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 media" ng-show="hiddenDiv[problem.id]" style="margin-top:-18px;padding: 1% 2% 3% 1%;background-color: white;">
+                    <hr>
+                    <div class="pull-left" style="margin-top: -4px;">
+                        <a href="#">
+                            <img class="media-object img-circle" src="img/client1.jpg" style="width: 40px;height: 40px;">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <form ng-enter="submitComment()">
+                            <input type="text" ng-model="textModel.val" class="form-control" placeholder="Write your comment">
+                        </form>
+                    </div>
+
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 45px;height: 45px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <hr>
+                        <div class="media" style="padding: 1% 1% 1% 4%;">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" style="width: 45px;height: 45px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="#" class="anchor-username">
+                                    <p style="font-size: 15px;" class="media-heading">Media heading</p>
+                                </a>
+                                <a href="#" class="anchor-time">51 mins</a>
+                            </div>
+                            <section class="post-body">
+                                <div style="padding: 1%;">
+                                    <p style="line-height: 1.6em;
+                                    margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                                        turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                                        erisque nulla sed.
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>

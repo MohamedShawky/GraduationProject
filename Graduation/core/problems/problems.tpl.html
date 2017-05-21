@@ -1,0 +1,266 @@
+<div class="col-md-3 hidden-sm navbar-fixed-top hidden-xs" style="margin-top: 4.5%;">
+    <div class="list-group">
+        <a class="list-group-item" ng-click="displayAllProblems()" ng-class="{active:tab === 0}">All Problems <span class="pull-right"></span></a>
+        <a class="list-group-item" ng-click="displaySoftWareProblems()" ng-class="{active:tab === 1}">SoftWare Problems</a>
+        <a class="list-group-item" ng-click="displayDailyProblems()" ng-class="{active:tab === 2}">Daily Problems</a>
+        <a class="list-group-item" ng-click="displayBusinessProblems()" ng-class="{active:tab === 3}">Business Problems</a>
+        <!--<a class="list-group-item" href="#"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>  SoftWare Problems</a>-->
+        <!--<a class="list-group-item" href="#"><i class="fa fa-hashtag fa-fw" aria-hidden="true"></i>  Followed Tags</a>-->
+        <!--<a class="list-group-item" href="#"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>  Public Activity</a>-->
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Invite your friends
+                        <span class="pull-right"><img src="images/1.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <small>Share this link via email, blog, or social networks!</small>
+                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="https://MyPod.tld/i/sdg321sd51sd5" value="https://MyPod.tld/i/sdg321sd51sd5">
+                    <a href="#"><small>Invite people by email</small></a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Welcome new users
+                        <span class="pull-right"><img src="images/2.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <small>Follow <a href="#">#newhere</a> and welcome new users to diaspora*!</small><br>
+                    <small><a href="#">Learn more</a></small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Need help?
+                        <span class="pull-right"><img src="images/3.jpg" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <small>The diaspora* community is here!</small><br>
+                    <small>Do You:</small><br>
+                    <small>... have a <a href="#">#question</a>?</small><br>
+                    <small>... find a <a href="#">#bug</a>?</small><br>
+                    <small>... have a <a href="#">#feature</a> suggestion?</small><br>
+                    <small><a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help</a>, <a href="#">Tutorials</a> & <a href="#">Wiki</a>: help for your first steps.</small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Connect services
+                        <span class="pull-right"><img src="images/4.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    <small>You can connect the following services to diaspora*:</small><br>
+                    <div align="center">
+                        <i class="fa fa-wordpress fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-tumblr-square fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Bookmarklet
+                        <span class="pull-right"><img src="images/1.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    <small>Post to diaspora* from anywhere by bookmarking this link => <a href="#">Post to diaspora*</a>.</small>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;">
+                    <h4 class="panel-title">
+                        <i class="fa fa-caret-right fa-fw" aria-hidden="true"></i>Got a problem?
+                        <span class="pull-right"><img src="images/6.png" width="30px" height="30px" style="margin-top:-5px;" /></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix" style="text-decoration:none;">
+                <div class="panel-body">
+                    <small>Contact the administrator of your pod!<br>
+                        <a href="#">Podmin email</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-offset-3 col-md-8">
+    <div class="col-md-10">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" style="margin-bottom: 3%;">
+    <div class="col-md-12">
+        <div class="widget-area no-padding blank" style="border-radius: 15px;">
+            <div class="status-upload" style="border-radius: 20px;border:1px solid rgba(141, 141, 141, 0.32);">
+                <form ng-submit="postProblemFrontEnd()">
+                    <textarea ng-model="newProblem.content" style="border-radius: 20px;" placeholder="Post your problem here ...." ></textarea>
+
+                    <ul style="margin: 10px 0px 0px 1px;">
+                                            <li style="margin-left:10px;">
+                                                <label class="radio-inline">
+                                                    <input ng-model="categoryPopUp" type="radio" value="software">SoftWare
+                                                </label>
+                                            </li>
+                                            <li style="margin-left:10px;">
+                                                <label class="radio-inline">
+                                                    <input ng-model="categoryPopUp" type="radio" value="daily">Daily
+                                                </label>
+                                            </li>
+                                            <li style="margin-left:10px;">
+                                                <label class="radio-inline">
+                                                    <input ng-model="categoryPopUp" type="radio" value="business">Business
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                    <button ng-click="postProblemFrontEnd()" style="background-color: white;color: black;border: 1px solid rgba(141, 141, 141, 0.32);" type="button" class="btn btn-success green"><i class="fa fa-share"></i> Post</button>
+                </form>
+
+            </div><!-- Status Upload  -->
+        </div><!-- Widget Area -->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+      <div class="panel panel-default col-md-12" ng-repeat="(key, problem) in problems">
+                      <div class="panel-body">
+                          <section class="post-heading">
+                              <div class="row">
+                                  <div class="col-md-11">
+                                      <div class="media">
+                                          <div class="media-left">
+                                              <a href="#">
+                                                  <img class="media-object photo-profile img-circle" src="img/client2.jpg" alt="...">
+                                              </a>
+                                          </div>
+                                          <div class="media-body">
+
+                                              <a href="#" class="anchor-username">
+                                                  <p class="media-heading">{{problem.publish_user.username}}</p>
+                                              </a>
+                                              <a href="#" class="anchor-time">{{problem.date | date:'MMM d,y'}}</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-1">
+                                      <a style="margin-left:15px;font-size: 16px; color: rgba(117,124,137,0.4); text-decoration: none; font-family: 'Roboto', sans-serif;text-decoration: none; cursor: pointer;">x</a>
+                                  </div>
+                              </div>
+                          </section>
+                          <section class="post-body">
+                              <div style="padding: 3% 3% 0 1%;">
+                                  <p style="line-height: 1.6em;
+                  margin: 0 0 10px 0;font-weight:400;font-size: 16px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                      {{problem.content}}
+                              </div>
+                          </section>
+                          <div class="post-footer" style="margin-bottom: -20px;">
+                              <div class="post-footer-option">
+                                  <hr>
+                                  <ul class="list-unstyled">
+                                      <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                                      <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                                      <li><a style="font-size:14px;font-family: 'Roboto', sans-serif; color: #4b4f56;" href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                                  </ul>
+                              </div>
+
+                          </div>
+
+                          <div class="col-md-12 media" style="margin-top:-18px;padding: 1% 2% 3% 1%;background-color: white;">
+                              <hr>
+                              <div class="pull-left" style="margin-top: -4px;">
+                                  <a href="#">
+                                      <img class="media-object img-circle" src="img/client1.jpg" style="width: 40px;height: 40px;">
+                                  </a>
+                              </div>
+                              <div class="media-body">
+                                  <form ng-submit="postCommentFrontEnd(key, problem.id)">
+                                      <input type="text" ng-model="newComment[key].content" class="form-control" placeholder="Write your comment">
+                                  </form>
+                              </div>
+
+
+
+                              <div class="comment" ng-repeat="(keyComment, itemComment) in problem.Comment">
+                                  <hr>
+                                  <div class="media" style="padding: 1% 1% 1% 4%;">
+                                      <div class="media-left">
+                                          <a href="#">
+                                              <img class="media-object img-circle" style="width: 40px;height: 40px;" src="img/client2.jpg" width="32" height="32" alt="...">
+                                          </a>
+                                      </div>
+                                      <div class="media-body">
+                                          <a href="#" class="anchor-username">
+                                              <p style="font-size: 15px;" class="media-heading">{{itemComment.user.username}}</p>
+                                          </a>
+                                          <a href="#" class="anchor-time">{{itemComment.date | date:'MMM,d,y'}}</a>
+                                      </div>
+                                      <section class="post-body">
+                                          <div style="padding: 1%;">
+                                              <p style="line-height: 1.6em;
+                                  margin: 0 0 10px 0;font-size: 14px; font-family: 'Roboto', sans-serif; color: #4b4f56;">
+                                                {{itemComment.content}}
+                                          </div>
+                                      </section>
+                                  </div>
+                              </div>
+
+                          </div>
+
+                      </div>
+                  </div>
+    </div>
+
+
+
+</div>

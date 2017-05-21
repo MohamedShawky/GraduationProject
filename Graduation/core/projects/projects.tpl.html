@@ -1,0 +1,31 @@
+
+<div class="container" style="background-color: #ffffff;">
+	<h1 style="font-family:'Roboto', sans-serif;    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: #929292;
+    font-size: 30px;
+    padding: 15px;
+    width: 100%;text-align:center;">SoftZone Projects</h1>
+    <div class="row" style="margin: 0.5%;">
+        <div class="col-md-4 col-sm-2" ng-repeat="project in projects">
+            <div class="column" style="margin: 5px;">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <a href="#">
+                                <img src="img/client2.jpg" class="img-circle">
+                            </a>
+                        </div>
+                        <img ng-src="{{project.image}}" class="img-responsive" alt="">
+                    </div>
+                    <div class="post-content">
+                        <h3 style="font-weight: 500;font-family: 'Roboto', sans-serif;" class="title">{{project.name}}</h3>
+                        <p class="description"> {{project.idea}}
+                        </p>
+                        <div class="post-meta"><hr><span class="timestamp"> {{project.date | date:'MMM d,y'}}</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
